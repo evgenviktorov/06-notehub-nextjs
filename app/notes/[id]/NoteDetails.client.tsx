@@ -1,8 +1,8 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
 import { fetchNoteById } from '@/lib/api'
-import css from './NoteDetails.module.css'
+import { useQuery } from '@tanstack/react-query'
+import css from './NoteDetails.client.module.css'
 
 interface Props {
 	id: string
