@@ -14,7 +14,7 @@ export default async function NotesPage({ searchParams }: Props) {
 	const pageParam = searchParams?.page
 	const searchParam = searchParams?.search
 
-	const page = typeof pageParam === 'string' ? Number(pageParam) : 1
+	const page = typeof pageParam === 'string' ? parseInt(pageParam, 10) : 1
 	const search = typeof searchParam === 'string' ? searchParam : ''
 
 	const queryClient = new QueryClient()
