@@ -6,13 +6,15 @@ import {
 } from '@tanstack/react-query'
 import NotesClient from './Notes.client'
 
-interface Props {
-	searchParams?: Record<string, string | string[] | undefined>
-}
+export default async function NotesPage({
+	searchParams,
+}: {
+	searchParams: Promise<Record<string, string | string[] | undefined>>
+}) {
+	const resolvedSearchParams = await searchParams
 
-export default async function NotesPage({ searchParams }: Props) {
-	const pageParam = searchParams?.page
-	const searchParam = searchParams?.search
+	const pageParam = resolvedSearchParams?.page
+	const searchParam = resolvedSearchParams?.search
 
 	const page = typeof pageParam === 'string' ? parseInt(pageParam, 10) : 1
 	const search = typeof searchParam === 'string' ? searchParam : ''
