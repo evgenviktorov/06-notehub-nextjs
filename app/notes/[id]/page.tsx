@@ -6,13 +6,11 @@ import {
 } from '@tanstack/react-query'
 import NoteDetailsClient from './NoteDetails.client'
 
-type Props = {
-	params: {
-		id: string
-	}
-}
-
-export default async function NoteDetailsPage({ params }: Props) {
+export default async function NoteDetailsPage({
+	params,
+}: {
+	params: { id: string }
+}) {
 	const queryClient = new QueryClient()
 
 	await queryClient.prefetchQuery({
