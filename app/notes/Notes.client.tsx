@@ -2,7 +2,7 @@
 
 import NoteForm from '@/components/NoteForm/NoteForm'
 import NoteList from '@/components/NoteList/NoteList'
-import NoteModal from '@/components/NoteModal/NoteModal'
+import Modal from '@/components/Modal/Modal'
 import Pagination from '@/components/Pagination/Pagination'
 import SearchBox from '@/components/SearchBox/SearchBox'
 import { fetchNotes } from '@/lib/api'
@@ -57,9 +57,9 @@ export default function NotesClient({
 				isError={isError}
 			/>
 			{isModalOpen && (
-				<NoteModal onClose={() => setIsModalOpen(false)}>
+				<Modal onClose={() => setIsModalOpen(false)}>
 					<NoteForm onClose={() => setIsModalOpen(false)} />
-				</NoteModal>
+				</Modal>
 			)}
 		</div>
 	)

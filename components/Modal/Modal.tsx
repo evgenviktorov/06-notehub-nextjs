@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import css from './NoteModal.module.css'
+import css from './Modal.module.css'
 
 interface ModalProps {
 	onClose: () => void
 	children: React.ReactNode
 }
 
-export default function NoteModal({ onClose, children }: ModalProps) {
+export default function Modal({ onClose, children }: ModalProps) {
 	const [modalRoot, setModalRoot] = useState<HTMLElement | null>(null)
 
 	useEffect(() => {
