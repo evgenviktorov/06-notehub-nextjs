@@ -1,5 +1,5 @@
-import { fetchNotes } from '@/lib/api';
 import type { FetchNotesResponse } from '@/lib/api';
+import { fetchNotes } from '@/lib/api';
 import {
   dehydrate,
   HydrationBoundary,
@@ -21,7 +21,7 @@ export default async function NotesPage() {
     'notes',
     page,
     search,
-  ]);
+  ]) ?? { notes: [], totalPages: 0, page, perPage: 0 };
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>

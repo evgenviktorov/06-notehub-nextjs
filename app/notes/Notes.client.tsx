@@ -16,7 +16,7 @@ import type { FetchNotesResponse } from '@/lib/api';
 import css from './Notes.client.module.css';
 
 interface NotesClientProps {
-  initialData?: FetchNotesResponse;
+  initialData: FetchNotesResponse;
 }
 
 export default function NotesClient({ initialData }: NotesClientProps) {
