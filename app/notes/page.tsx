@@ -6,25 +6,24 @@ import {
 } from '@tanstack/react-query'
 import NotesClient from './Notes.client'
 
-type SearchParams = Record<string, string | string[] | undefined>
+type SearchParams = Promise<Record<string, string | string[] | undefined>>
 
 export default async function NotesPage({
 	searchParams,
 }: {
-	searchParams?: SearchParams
+	searchParams: SearchParams
 }) {
-	const pageStr = Array.isArray(searchParams?.page)
-		? searchParams?.page[0]
-		: searchParams?.page
-	const searchStr = Array.isArray(searchParams?.search)
-		? searchParams?.search[0]
-		: searchParams?.search
+	const params = await searchParams
+
+	const pageStr = Array.isArray(params.page) ? params.page[0] : params.page
+	const searchStr = Array.isArray(params.search)
+		? params.search[0]
+		: params.search
 
 	const page = pageStr ? parseInt(pageStr, 10) : 1
 	const search = searchStr ?? ''
 
 	const queryClient = new QueryClient()
-
 	await queryClient.prefetchQuery({
 		queryKey: ['notes', page, search],
 		queryFn: () => fetchNotes(page, search),
