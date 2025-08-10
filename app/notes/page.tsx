@@ -7,22 +7,9 @@ import {
 } from '@tanstack/react-query';
 import NotesClient from './Notes.client';
 
-type SearchParams = Promise<Record<string, string | string[] | undefined>>;
-
-export default async function NotesPage({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
-  const params = await searchParams;
-
-  const pageStr = Array.isArray(params.page) ? params.page[0] : params.page;
-  const searchStr = Array.isArray(params.search)
-    ? params.search[0]
-    : params.search;
-
-  const page = pageStr ? parseInt(pageStr, 10) : 1;
-  const search = searchStr ?? '';
+export default async function NotesPage() {
+  const page = 1;
+  const search = '';
 
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
@@ -38,7 +25,7 @@ export default async function NotesPage({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <NotesClient page={page} search={search} initialData={initialData} />
+      <NotesClient initialData={initialData} />
     </HydrationBoundary>
   );
 }
