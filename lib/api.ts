@@ -1,5 +1,18 @@
-import type { CreateNoteData, FetchNotesResponse, Note } from '@/types/note';
+import type { Note } from '@/types/note';
 import axios from 'axios';
+
+export interface FetchNotesResponse {
+  notes: Note[];
+  totalPages: number;
+  page: number;
+  perPage: number;
+}
+
+export interface CreateNoteData {
+  title: string;
+  content: string;
+  tag: string;
+}
 
 export const fetchNotes = async (
   page: number,

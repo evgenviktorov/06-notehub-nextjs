@@ -11,8 +11,8 @@ import Pagination from '@/components/Pagination/Pagination';
 import SearchBox from '@/components/SearchBox/SearchBox';
 
 import { fetchNotes } from '@/lib/api';
-import type { FetchNotesResponse, Note } from '@/types/note';
-
+import type { Note } from '@/types/note';
+import type { FetchNotesResponse } from '@/lib/api';
 import css from './Notes.client.module.css';
 
 interface NotesClientProps {
