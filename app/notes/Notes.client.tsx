@@ -10,7 +10,7 @@ import NoteList from '@/components/NoteList/NoteList';
 import Pagination from '@/components/Pagination/Pagination';
 import SearchBox from '@/components/SearchBox/SearchBox';
 
-import { fetchNotes } from '@/lib/api/fetchNotes';
+import { fetchNotes } from '@/lib/api';
 import type { FetchNotesResponse, Note } from '@/types/note';
 
 import css from './Notes.client.module.css';

@@ -1,4 +1,4 @@
-import { fetchNotes } from '@/lib/api/fetchNotes';
+import { fetchNotes } from '@/lib/api';
 import type { FetchNotesResponse } from '@/types/note';
 import {
   dehydrate,
