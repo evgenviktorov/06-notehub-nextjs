@@ -1,4 +1,5 @@
-import { fetchNotes, type FetchNotesResponse } from '@/lib/api/fetchNotes';
+import { fetchNotes } from '@/lib/api/fetchNotes';
+import type { FetchNotesResponse } from '@/types/note';
 import {
   dehydrate,
   HydrationBoundary,
