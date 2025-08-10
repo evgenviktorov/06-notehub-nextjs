@@ -1,4 +1,4 @@
-import { deleteNote } from '@/lib/api';
+import { deleteNote } from '@/lib/api/deleteNote';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import Link from 'next/link';
 import type { Note } from '../../types/note';

@@ -1,4 +1,4 @@
-import { createNote } from '@/lib/api';
+import { createNote } from '@/lib/api/createNote';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
