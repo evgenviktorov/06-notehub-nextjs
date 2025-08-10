@@ -9,7 +9,7 @@ import NoteDetailsClient from './NoteDetails.client'
 export default async function NoteDetailsPage({
 	params,
 }: {
-	params: Promise<{ id: string }>
+	params: { id: string }
 }) {
 	const resolvedParams = await params
 	const id = resolvedParams.id

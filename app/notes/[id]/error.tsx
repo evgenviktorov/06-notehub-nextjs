@@ -1,10 +1,5 @@
 'use client'
 
-interface ErrorProps {
-	error: Error & { digest?: string }
-	reset: () => void
-}
-
-export default function Error({ error }: ErrorProps) {
+export default function Error({ error }: { error: Error }) {
 	return <p>Could not fetch note details. {error.message}</p>
 }
